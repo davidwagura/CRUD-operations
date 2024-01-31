@@ -7,14 +7,26 @@
 </head>
 <body>
     <h1>Create a product</h1>
-    <form action="" method="post">
+    <div>
+        @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>    
+            @endforeach
+        </ul>
+            
+        @endif
+    </div>
+    <form action="{{route("product.store")}}" method="post">
+        @csrf
+        @method('post')
         <div>
             <label for="name">Name:</label>
             <input type="text" name="name" placeholder="name">
         </div>
         <div>
             <label for="quantity">QTY:</label>
-            <input type="text" name="price" placeholder="qty">
+            <input type="text" name="qty" placeholder="qty">
         </div>
         <div>
             <label for="price">Price:</label>

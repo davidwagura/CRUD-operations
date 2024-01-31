@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function index() {
-       return view('products.index');
+
+       $products = Product::all();
+       
+       return view('products.index', ['products' => $products]);
     }
 
     public function create() {
@@ -15,6 +19,21 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'qty' => 'required|numeric',
+            'price' => 'required|decimal:0,2',
+            'description' => 'nullable'
+            
+        ]);
+
+        $newproduct = Product::create($data);
+
+        return redirect(route("product.index"));
+
+    }
+
+    public function edit(pProduct $product) {
 
     }
 }
