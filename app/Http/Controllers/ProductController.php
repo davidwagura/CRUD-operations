@@ -14,5 +14,7 @@ class ProductController extends Controller
         return view('products.create');
     }
 
+    public function store(Request $request){
 
+    }
 }

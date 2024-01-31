@@ -9,18 +9,25 @@
     <h1>Create a product</h1>
     <form action="" method="post">
         <div>
-            <label for=""></label>
+            <label for="name">Name:</label>
             <input type="text" name="name" placeholder="name">
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" name="name" placeholder="name">
+            <label for="quantity">QTY:</label>
+            <input type="text" name="price" placeholder="qty">
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" name="name" placeholder="name">
+            <label for="price">Price:</label>
+            <input type="text" name="price" placeholder="price">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" name="description" placeholder="description">
         </div>
 
+        <div>
+            <input type="submit" value="Save a new product"/> 
+        </div>
     </form>
 </body>
 </html>
