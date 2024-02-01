@@ -11,11 +11,11 @@ class CarController extends Controller
 
        $cars = Car::all();
 
-       return view('new.index', ['cars' => $cars]);
+       return view('show.index', ['cars' => $cars]);
     }
 
     public function create() {
-        return view('new.create');
+        return view('show.index');
     }
 
     public function store(Request $request)
@@ -23,7 +23,6 @@ class CarController extends Controller
         $data = $request->validate
         ([
             'name' => 'required',
-            'price' => 'required|numeric',
             'model' => 'required',
             'description' => 'nullable'
             
@@ -37,14 +36,13 @@ class CarController extends Controller
 
     public function edit(car $car) 
     {         
-        return view('new.edit', ['car' => $car]);
+        return view('show.edit', ['car' => $car]);
     }
 
     public function update(Request $request,Car $car) 
     {
         $data = $request->validate([
             'name' => 'required',
-            'price' => 'required|numeric',
             'model' => 'required',
             'description' => 'nullable'
             

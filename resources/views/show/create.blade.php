@@ -10,15 +10,24 @@
         <u>Create car details:</u>
     </h1>
     <div>
-        <form action="" method="get">
+        <form action="{{route("new.store")}}" method="post">
             @csrf
-            @method('get')
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            <label for="mode">Model:</label>
-            <input type="text" name="model">
-            <label for="description">Description:</label>
-            <input type="text" name="description">
+            @method('post')
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label for="model">Model:</label>
+                <input type="text" name="model">
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <input type="text" name="description">
+            </div>
+            <div>
+                <input type="submit" value="Save as new car">
+            </div>
         </form>
     </div>
 </body>

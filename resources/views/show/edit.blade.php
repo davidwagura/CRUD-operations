@@ -10,19 +10,24 @@
         <u>Edit car details:</u>
     </h1>
     <div>
-        <form action="{{ route('car.update') }}" method="post">
+        <form action="{{ route('car.update', ['car' => $car]) }}" method="post">
             @csrf
-            @method('post')
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            Route::get('/new-car', [CarController::class, 'index']);
-
-            Route::get('/new-car1', [CarController::class, 'create']);
-            
-            Route::get('/new-car2', [CarController::class, 'edit']);            <label for="mode">Model:</label>
-            <input type="text" name="model">
-            <label for="description">Description:</label>
-            <input type="text" name="description">
+            @method('put')
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="{{ $car->name }}">
+            </div>
+            <div>
+                <label for="model">Model:</label>
+                <input type="text" name="model" value="{{ $car->model }}">
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <input type="text" name="description" value="{{ $car->description }}">
+            </div>
+            <div>
+                <input type="submit" value="Update">
+            </div>
         </form>
     </div>
 </body>
