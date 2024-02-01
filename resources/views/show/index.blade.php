@@ -6,22 +6,34 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        body {
+            background-color: burlywood;
+            text-align: center;
+        }
+        table {
+            align-items: center;
+        }
+        
+    </style>
+    <h1>
+        <u>Fill in the table below:</u>
+    </h1>
     <div>
-        <table border="2">
+        <table>
             <tr>
+                <th>Id:</th>
                 <th>Name:</th>
-                <th>Price:</th>
                 <th>Model:</th>
-                <th>Description</th>
+                <th>Description:</th>
             </tr>
-            @foreach ($cars as $car )
+            @foreach ($cars as $car)
             <tr>
+                <td>{{ $car->id }}</td>
                 <td>{{ $car->name }}</td>
-                <td>{{ $car->price }}</td>
                 <td>{{ $car->model }}</td>
                 <td>{{ $car->description }}</td>
-
-            </tr>  
+            </tr>
             @endforeach
         </table>
     </div>

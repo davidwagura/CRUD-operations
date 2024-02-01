@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -35,3 +36,17 @@ Route::get('/product/add', [ProductController::class, 'add'])->name('product.add
 // cars
 
 
+
+Route::get('/new-car', [CarController::class, 'index'])->name('new.index');
+
+Route::post('/new-car', [ CarController::class, 'store'])->name('new.store');
+
+
+
+Route::get('/new/{car}/edit', [CarController::class, 'edit'])->name('car.edit');
+
+Route::put('/new/{car}/update', [CarController::class, 'update' ])->name('car.update');
+
+Route::delete('/new/{car}/delete', [CarController::class, 'delete'])->name('new.delete');
+
+Route::get('/new/add', [CarController::class, 'create'])->name('new.add');
