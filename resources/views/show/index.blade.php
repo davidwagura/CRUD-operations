@@ -31,20 +31,19 @@
                 <td>{{ $car->name }}</td>
                 <td>{{ $car->model }}</td>
                 <td>{{ $car->description }}</td>
-                
+                <td>
+                    <form action="{{route('new.delete', ['car' => $car ])}}" method="post">
+                        @csrf
+                        @method('delete')
+    
+                        <input type="submit" value="delete"/>
+                    </form>
+                </td>
+                <td>
+                    <a href="{{ route('car.edit', ['car' => $car ]) }}">Edit</a>
+                </td>    
             </tr>
-            <td>
-                <a href="{{ route('car.edit', ['car' => $car ]) }}">Edit</a>
-            </td>
-            <td>
-                <form action="{{route('new.delete', ['car' => $car ])}}" method="post">
-                    @csrf
-                    @method('delete')
-
-                    <input type="submit" value="delete"/>
-                </form>
-            </td>       
-    @endforeach
+            @endforeach
         </table>
     </div>
     <div>

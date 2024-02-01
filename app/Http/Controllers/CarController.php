@@ -15,7 +15,7 @@ class CarController extends Controller
     }
 
     public function create() {
-        return view('show.index');
+        return view('show.create');
     }
 
     public function store(Request $request)
