@@ -30,7 +30,7 @@
         </div>
         <div>
             <label for="price">Price:</label>
-            <input type="text" name="price" placeholder="price" value="{$product->price}">
+            <input type="text" name="price" placeholder="price" value="{{$product->price}}">
         </div>
         <div>
             <label for="description">Description:</label>

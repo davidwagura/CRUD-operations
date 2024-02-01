@@ -14,7 +14,7 @@
                 <th>Model:</th>
                 <th>Description</th>
             </tr>
-            @foreach ($cars as$car )
+            @foreach ($cars as $car )
             <tr>
                 <td>{{ $car->name }}</td>
                 <td>{{ $car->price }}</td>

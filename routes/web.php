@@ -19,6 +19,9 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 
 Route::post('/product', [ProductController::class, 'store'])->name('product.store');
 
+Route::get('/product', [ProductController::class, 'create'])->name('product.create');
+
+
 Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
 
 Route::put('/product/{product}/update', [ProductController::class, 'update' ])->name('product.update');
@@ -31,4 +34,4 @@ Route::get('/product/add', [ProductController::class, 'add'])->name('product.add
 
 // cars
 
-Route::get('/car', [CarController::class, 'index'])->name('car.index');
+
